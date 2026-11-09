@@ -1,0 +1,13 @@
+step,rows
+Raw rows (both sheets),"1,067,371"
+Exact duplicates removed,"-34,335"
+Rows after de-duplication,"1,033,036"
+Removed: bad-debt adjustments,-6
+Removed: non-product codes,"-5,815"
+Removed: stock adjustments,"-3,392"
+Removed: zero or negative price,"-2,571"
+"Cancellations (kept separately, with Customer ID)","17,586"
+Cancellations dropped (no Customer ID),328
+Valid sales without Customer ID (kept separately),"226,761"
+Duplicates found after description clean-up,-2
+CLEAN SALES (with Customer ID),"776,575"
