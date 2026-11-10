@@ -1,0 +1,28 @@
+column,role,description
+CustomerID,id,Customer identifier
+SnapshotDate,id,"Cut-off date: features use data before it, the label uses the 150 days after it"
+WindowEnd,id,End of the outcome window
+Split,id,train or test (time-based split)
+Recency,feature,Days since last purchase
+Frequency,feature,Number of orders before the cut-off
+Monetary,feature,Total spend before the cut-off
+AvgOrderValue,feature,Average order value
+AvgGapDays,feature,Average days between purchase days (missing if only 1 purchase day)
+StdGapDays,feature,Standard deviation of the gaps (missing if fewer than 3 purchase days)
+RecencyGapRatio,feature,Recency divided by AvgGapDays; above 1 = overdue
+Orders90,feature,Orders in the last 90 days
+Spend90,feature,Spend in the last 90 days
+OrdersTrend,feature,"(orders last 90d - orders previous 90d) / their sum, in [-1, 1]"
+SpendTrend,feature,Same for spend
+DistinctProducts,feature,Number of different products ever bought
+AvgItemsPerOrder,feature,Average units per order
+AvgLinesPerOrder,feature,Average different products per order
+ReturnRate,feature,"Returned value / spend, capped at 1"
+ReturnCount,feature,Number of return invoices
+Tenure,feature,Days since first purchase
+PurchaseRate,feature,Orders per 30 days of tenure
+Country,feature,Customer country (one-hot encode in Step 4)
+IsUK,feature,1 if United Kingdom
+Churn,TARGET,1 = no purchase in the 150 days after the cut-off
+Outcome_FutureOrders,OUTCOME - never a feature,Orders in the outcome window (for simulation/evaluation only)
+Outcome_FutureSpend,OUTCOME - never a feature,Spend in the outcome window (for simulation/evaluation only)
