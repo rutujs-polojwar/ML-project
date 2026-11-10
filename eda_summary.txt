@@ -1,0 +1,20 @@
+KEY FINDINGS
+1. Revenue Jan-Nov 2011 vs Jan-Nov 2010: -1.4%; active customers: +1.0% - the business is essentially flat year on year.
+2. Best month: Nov 2010 (1,155,978); weakest full month: Feb 2011 (442,294).
+3. Average order value is stable at about 459 (range 399 - 557).
+4. Sep-Nov accounted for 36% of all 2010 revenue (pre-Christmas stocking season).
+5. Peak month: Nov in 2010 and Nov in 2011; quietest month of 2010: Feb.
+6. Busiest weekday: Thu; busiest hour: 12:00. 78% of revenue is booked between 10:00 and 15:59.
+7. Days with no sales at all: none.
+8. The UK generates 83% of revenue and 91% of customers; the next markets are EIRE, Netherlands, Germany, France.
+9. Among countries with 5+ customers, Netherlands has the highest revenue per customer (24,990 vs 2,625 for the UK).
+10. The top 20% of products generate 78% of revenue; 1,016 of 4,618 products (22%) make up 80% of revenue.
+11. 17% of products were bought by fewer than 10 customers (a long tail that matters for the recommender).
+12. 28% of customers placed only one order; the median customer placed 3 orders and the most active placed 373.
+13. The top 10% of customers generate 63% of revenue.
+14. The median order is worth 303 but the mean is 459: a few very large (wholesale) orders pull the average up.
+15. Time between purchases: median 32 days, 75% within 70 days, 90% within 148 days.
+16. On average 80% of monthly active customers are returning customers, so the business depends on repeat buyers.
+17. Average cohort retention: month 1 = 20%, month 3 = 22%, month 6 = 18%, month 12 = 18%.
+18. Returns equal 2.8% of sales value (2.6% without the single largest cancelled invoice, C550456).
+19. 42% of customers have at least one return; 5.1% of all customers return more than 10% of what they buy.
