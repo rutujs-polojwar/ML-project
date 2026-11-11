@@ -1,0 +1,6 @@
+1. Best model (by cross-validation): Gradient Boosting (sklearn); test ROC-AUC 0.775 (95% CI 0.761 - 0.787), PR-AUC 0.696.
+2. Ranking of models by test ROC-AUC: Random Forest 0.788, Logistic Regression 0.781, Gradient Boosting (sklearn) 0.775.
+3. At the chosen threshold (0.35) the best model reaches F1 0.715, precision 0.577, recall 0.939.
+4. Contacting only the 20% highest-risk customers reaches 31% of all churners (random targeting would reach 20%).
+5. Calibration: ECE for Gradient Boosting (sklearn) changed from 0.050 (raw) to 0.050 (calibrated) using 'none'.
+6. Hardest group: customers with 1 order (ROC-AUC 0.633); easiest: 5+ orders (0.787).
