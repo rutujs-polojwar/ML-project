@@ -1,4 +1,5 @@
 # Customer Churn Prediction, Segmentation and Retention Framework
+
 ### Online Retail II dataset
 
 ## 1. Project Overview
@@ -9,16 +10,16 @@ The data is the **Online Retail II** dataset: transactions of a UK-based online 
 
 ## 2. Project Objectives
 
-| # | Objective | Status |
-|---|---|---|
-| 1 | Analyse historical transactions and identify purchasing patterns and customer behaviour | Done (notebooks 01, 02) |
-| 2 | Develop and compare ML classification models for churn prediction | Done (notebooks 03, 04) |
-| 3 | Identify behavioural factors behind inactivity using Explainable AI (SHAP) | Planned |
-| 4 | Customer segmentation and customer lifetime value estimation | Planned |
-| 5 | Personalised product recommendations (collaborative filtering and association rules) | Planned |
-| 6 | Intelligent retention framework using churn probability, customer value and preferences | Planned |
-| 7 | Interactive dashboard integrating all results | Planned |
-| 8 | Evaluate model performance and simulate the effect of retention strategies | Planned |
+| #   | Objective                                                                               | Status                  |
+| --- | --------------------------------------------------------------------------------------- | ----------------------- |
+| 1   | Analyse historical transactions and identify purchasing patterns and customer behaviour | Done (notebooks 01, 02) |
+| 2   | Develop and compare ML classification models for churn prediction                       | Done (notebooks 03, 04) |
+| 3   | Identify behavioural factors behind inactivity using Explainable AI (SHAP)              | Planned                 |
+| 4   | Customer segmentation and customer lifetime value estimation                            | Planned                 |
+| 5   | Personalised product recommendations (collaborative filtering and association rules)    | Planned                 |
+| 6   | Intelligent retention framework using churn probability, customer value and preferences | Planned                 |
+| 7   | Interactive dashboard integrating all results                                           | Planned                 |
+| 8   | Evaluate model performance and simulate the effect of retention strategies              | Planned                 |
 
 ## 3. Folder Structure
 
@@ -72,11 +73,13 @@ Each notebook reads the files saved by the earlier ones, so they must be run fro
 ## 6. Key Results So Far
 
 **Data**
+
 - 1,067,371 raw rows; 34,335 exact duplicates removed.
 - Clean sales: 776,575 lines, 5,852 customers, 4,619 products, 36,594 orders.
 - 23% of raw rows have no Customer ID, so customer-level analysis covers the other 77%.
 
 **Business patterns**
+
 - Strong seasonality: September to November brings about 36% of yearly revenue; November is the peak month.
 - Revenue for Jan-Nov 2011 is about flat versus 2010 (-1.4%).
 - The UK is about 83% of revenue; the next markets are EIRE, Netherlands, Germany and France.
@@ -85,18 +88,19 @@ Each notebook reads the files saved by the earlier ones, so they must be run fro
 - Returns are about 2.8% of sales value.
 
 **Churn dataset**
+
 - 18,651 customer-snapshot rows with 20 features (14,338 train, 4,313 test).
 - Overall churn rate 44.8%, varying by snapshot (32% to 56%) because of seasonality.
 - Churn falls as order count rises (66% for one-time buyers, 9% for customers with 10+ orders) and rises with days since last purchase (25% within 30 days, 67% after 150 days).
 
 **Churn models (test snapshot, 1 July 2011)**
 
-| Model | CV ROC-AUC (train) | Test ROC-AUC | Test PR-AUC | F1 | Recall |
-|---|---|---|---|---|---|
-| Dummy baseline (average rate) | - | 0.500 | 0.457 | - | - |
-| Logistic Regression | 0.748 | 0.781 | 0.709 | 0.714 | 0.920 |
-| Random Forest | 0.753 | 0.788 | 0.722 | 0.714 | 0.938 |
-| Gradient Boosting (scikit-learn) | 0.753 | 0.775 | 0.696 | 0.715 | 0.939 |
+| Model                            | CV ROC-AUC (train) | Test ROC-AUC | Test PR-AUC | F1    | Recall |
+| -------------------------------- | ------------------ | ------------ | ----------- | ----- | ------ |
+| Dummy baseline (average rate)    | -                  | 0.500        | 0.457       | -     | -      |
+| Logistic Regression              | 0.748              | 0.781        | 0.709       | 0.714 | 0.920  |
+| Random Forest                    | 0.753              | 0.788        | 0.722       | 0.714 | 0.938  |
+| Gradient Boosting (scikit-learn) | 0.753              | 0.775        | 0.696       | 0.715 | 0.939  |
 
 - The three models perform almost identically; their 95% confidence intervals overlap. The model picked by cross-validation (gradient boosting) was a near-tie with the Random Forest, which scored slightly higher on the test snapshot. XGBoost was not installed, so scikit-learn's boosting was used.
 - Most of the predictive signal comes from simple behaviour (recency and frequency), so a more complex model adds little.
@@ -114,17 +118,7 @@ Each notebook reads the files saved by the earlier ones, so they must be run fro
 - **Calibration and threshold:** both are chosen using out-of-fold training predictions, never the test set.
 - **Threshold:** the F1-maximising threshold is low (about 0.30 to 0.35) because about 45% of customers churn, so F1 rewards catching most churners. Step 8 should choose the contact threshold using campaign cost and customer value instead.
 
-## 8. Planned Next Steps
-
-4. ~~Train and compare churn models~~ Done (notebook 04).
-5. Explain the best model with SHAP and summarise the behavioural drivers of churn.
-6. Segment customers (K-Means on RFM features) and estimate lifetime value (BG/NBD and Gamma-Gamma).
-7. Build the recommender: FP-Growth association rules and collaborative filtering, evaluated with Precision@K, Recall@K and hit rate.
-8. Build the retention framework: rules combining churn probability, customer value and preferred products.
-9. Simulate retention campaigns (assumed uplift, sensitivity analysis, cost versus revenue saved, targeted versus random).
-10. Build the dashboard (Streamlit or Power BI): overview, churn risk list, customer profile, segments, recommendations and retention actions.
-
-## 9. Limitations
+## 8. Limitations
 
 - The data is mostly wholesale, so findings may not transfer to individual consumers.
 - No demographics, product categories, channel or marketing history are available.
