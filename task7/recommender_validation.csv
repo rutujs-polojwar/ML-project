@@ -1,0 +1,28 @@
+family,params,val_2010-07,val_2011-01,val_mean
+Association rules,"{'min_support': 0.005, 'min_confidence': 0.2, 'weight': 'confidence'}",0.12408184679958027,0.07918321043675552,0.1016325286181679
+Association rules,"{'min_support': 0.002, 'min_confidence': 0.2, 'weight': 'confidence'}",0.12303252885624344,0.07577992058990357,0.0994062247230735
+Association rules,"{'min_support': 0.005, 'min_confidence': 0.1, 'weight': 'confidence'}",0.1189401888772298,0.0792966534316506,0.0991184211544402
+Association rules,"{'min_support': 0.005, 'min_confidence': 0.3, 'weight': 'confidence'}",0.11789087093389296,0.07889960294951788,0.09839523694170542
+Association rules,"{'min_support': 0.01, 'min_confidence': 0.1, 'weight': 'confidence'}",0.11705141657922352,0.07538287010777085,0.09621714334349718
+Association rules,"{'min_support': 0.01, 'min_confidence': 0.2, 'weight': 'confidence'}",0.11631689401888774,0.07447532614861033,0.09539611008374904
+Association rules,"{'min_support': 0.002, 'min_confidence': 0.3, 'weight': 'confidence'}",0.11631689401888774,0.07345433919455474,0.09488561660672123
+Association rules,"{'min_support': 0.005, 'min_confidence': 0.1, 'weight': 'lift'}",0.11232948583420778,0.07566647759500851,0.09399798171460814
+Association rules,"{'min_support': 0.01, 'min_confidence': 0.3, 'weight': 'confidence'}",0.11201469045120671,0.074758933635848,0.09338681204352736
+Association rules,"{'min_support': 0.005, 'min_confidence': 0.2, 'weight': 'lift'}",0.11295907660020987,0.07283040272263186,0.09289473966142087
+Association rules,"{'min_support': 0.01, 'min_confidence': 0.1, 'weight': 'lift'}",0.11269674711437566,0.07226318774815654,0.0924799674312661
+Association rules,"{'min_support': 0.01, 'min_confidence': 0.2, 'weight': 'lift'}",0.11096537250786988,0.07118547929665343,0.09107542590226166
+Association rules,"{'min_support': 0.002, 'min_confidence': 0.1, 'weight': 'confidence'}",0.10661070304302205,0.07464549064095292,0.09062809684198748
+Association rules,"{'min_support': 0.01, 'min_confidence': 0.3, 'weight': 'lift'}",0.10849947534102834,0.07141236528644357,0.08995592031373595
+Association rules,"{'min_support': 0.005, 'min_confidence': 0.3, 'weight': 'lift'}",0.10587618048268627,0.0683494044242768,0.08711279245348152
+Association rules,"{'min_support': 0.002, 'min_confidence': 0.1, 'weight': 'lift'}",0.09716684155299055,0.061996596710153146,0.07958171913157185
+Association rules,"{'min_support': 0.002, 'min_confidence': 0.2, 'weight': 'lift'}",0.08557187827911858,0.05070901871809416,0.06814044849860637
+Association rules,"{'min_support': 0.002, 'min_confidence': 0.3, 'weight': 'lift'}",0.08310598111227702,0.05292115711854794,0.06801356911541248
+Item-based CF,{'neighbours': 20},0.12345225603357818,0.08332387975042542,0.1033880678920018
+Item-based CF,{'neighbours': 10},0.12198321091290662,0.08417470221213842,0.10307895656252253
+Item-based CF,{'neighbours': 50},0.11521511017838407,0.08094157685762904,0.09807834351800655
+Item-based CF,{'neighbours': 100},0.11316894018887723,0.07549631310266591,0.09433262664577158
+Matrix factorisation (SVD),{'components': 64},0.1277544596012592,0.0869540555870675,0.10735425759416334
+Matrix factorisation (SVD),{'components': 32},0.12838405036726128,0.08513896766874647,0.10676150901800388
+Matrix factorisation (SVD),{'components': 16},0.12324239244491082,0.0825865002836075,0.10291444636425917
+Matrix factorisation (SVD),{'components': 128},0.11852046169989508,0.08020419739081112,0.0993623295453531
+Popularity,{},0.07203567681007346,0.05484968803176404,0.06344268242091874

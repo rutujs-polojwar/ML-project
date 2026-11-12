@@ -1,0 +1,34 @@
+RECOMMENDATION SUMMARY (notebook 05)
+============================================================
+Test snapshot 2011-07-01; outcome window 150 days; K = 10
+Eligible customers: 4,313 (identical to churn_predictions_test.csv)
+Catalogue: 4,335 products; training baskets: 26,944; matrix density 1.65%
+Hold-out: 2,343 customers bought again; 2,243 bought at least one product new to them (discovery setting)
+Hold-out purchases that were re-orders: 35.7%; new to the customer: 51.5%; brand-new products: 12.8%
+
+Chosen settings (tuned on 2010-07-01 and 2011-01-01 snapshots, discovery Precision@10):
+  Association rules: {'min_support': 0.005, 'min_confidence': 0.2, 'weight': 'confidence'}
+  Item-based CF: {'neighbours': 20}
+  Matrix factorisation (SVD): {'components': 64}
+Method selected by validation: Matrix factorisation (SVD)
+
+DISCOVERY setting (recommend only products the customer has never bought), test snapshot:
+  Popularity                   P@10 0.049  Recall@10 0.022  Hit rate@10 0.342  NDCG@10 0.053  Coverage 1.8%
+  Association rules            P@10 0.073  Recall@10 0.040  Hit rate@10 0.430  NDCG@10 0.084  Coverage 9.6%
+  Item-based CF                P@10 0.084  Recall@10 0.047  Hit rate@10 0.458  NDCG@10 0.096  Coverage 24.8%
+  Matrix factorisation (SVD)   P@10 0.087  Recall@10 0.048  Hit rate@10 0.483  NDCG@10 0.101  Coverage 19.7%
+
+ALL-ITEMS setting (repeat purchases allowed), test snapshot:
+  Re-order favourites          P@10 0.352  Recall@10 0.151  Hit rate@10 0.855  NDCG@10 0.408  Coverage 40.4%
+  Popularity                   P@10 0.126  Recall@10 0.039  Hit rate@10 0.617  NDCG@10 0.137  Coverage 0.2%
+  Association rules            P@10 0.222  Recall@10 0.078  Hit rate@10 0.684  NDCG@10 0.240  Coverage 9.2%
+  Item-based CF                P@10 0.234  Recall@10 0.083  Hit rate@10 0.693  NDCG@10 0.252  Coverage 28.6%
+  Matrix factorisation (SVD)   P@10 0.283  Recall@10 0.112  Hit rate@10 0.801  NDCG@10 0.319  Coverage 14.7%
+
+Matrix factorisation (SVD) vs popularity (discovery): Precision@10 0.087 vs 0.049 = 1.75x; hit rate 48.3% vs 34.2%
+
+Files written: data/recommendations_test_snapshot.csv, data/recommendations_current.csv, data/recommender_comparison.csv,
+               data/recommender_validation.csv, data/association_rules.csv, figures/rec_*.png
+
+Limitations: customers who churned (bought nothing in the window) cannot be scored; purchases later returned still count as purchases;
+no product categories, prices or margins are used; one test snapshot only; effect of offers on churn is not measured (see Objective 8 simulation).
