@@ -1,0 +1,8 @@
+1. Framework: 8 ordered rules over churn probability (Step 4), CLV (Step 6), reasons (Step 5) and preferred products (Steps 1 and 7) give each of the 4,313 test customers one of 7 actions.
+2. Action mix: PERSONAL 50, WINBACK_DISCOUNT 781, REMINDER 1,099, CHECKIN 302, LOYALTY 771, CROSSSELL 1,009, MONITOR 301.
+3. 4,012 customers (93%) are contacted and hold 95% of the value at risk; assumed contact cost GBP 6,969.
+4. Only 4 customers are both High risk and High value, and 61% of the value at risk lies in the Low risk tier, so personal outreach is allocated by value at risk, not by risk tier.
+5. Costly actions are limited: personal call 50 customers, discount 781, loyalty reward 771; the rest are low-cost emails or no contact.
+6. Personal outreach: 50 customers (assumed capacity), average churn probability 0.55, average CLV 3,355, holding 6% of the value at risk.
+7. Check with outcomes (N = 50): the value-at-risk list captures 7.3% of the revenue that churners were expected to bring, against 0.6% by probability, 2.7% by CLV and 1.2% at random.
+8. All costs, the personal-outreach capacity and the discount minimum are placeholder assumptions; the effect of the actions on churn is NOT measured here and is estimated by simulation in Step 9.

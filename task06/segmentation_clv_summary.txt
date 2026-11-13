@@ -1,0 +1,12 @@
+1. Segmentation: K-Means on log-scaled, standardised RFM of the 4,313 active customers at 01 Jul 2011; k = 4 chosen by silhouette among k >= 3 (silhouette 0.37, stability ARI 0.97); structure is a continuum, so segments are practical divisions.
+2. Segment 1 Champions: 698 customers (16%), 66% of past spend, last purchase a median 21 days ago, 14 orders; 7% churned afterwards; mean 12-month CLV 5,709.
+3. Segment 2 At-risk regulars: 1,284 customers (30%), 23% of past spend, last purchase a median 148 days ago, 5 orders; 43% churned afterwards; mean 12-month CLV 1,010.
+4. Segment 3 Recent / developing customers: 715 customers (17%), 6% of past spend, last purchase a median 22 days ago, 3 orders; 34% churned afterwards; mean 12-month CLV 1,012.
+5. Segment 4 Lapsed low-frequency customers: 1,616 customers (37%), 5% of past spend, last purchase a median 225 days ago, 1 orders; 70% churned afterwards; mean 12-month CLV 326.
+6. CLV model: BG/NBD (r 0.67, alpha 65.7, a 0.16, b 3.13) + Gamma-Gamma (p 2.52, q 3.58, gamma 398); CLV = expected revenue over 12 months, 1%/month discount, no margin data; Gamma-Gamma independence check correlation 0.13.
+7. Total expected 12-month revenue of the active customers 6,531,524; the top 20% by CLV hold 69%.
+8. Backtest Jul 2011: predicted/actual purchase days 0.98, revenue 0.83 (0.96 without the top 1% of spenders); rank correlation 0.59 (purchases) and 0.61 (revenue); the top 10/20/30% by predicted revenue deliver 61%/74%/82% of actual revenue.
+9. Backtest Dec 2010: purchase ratio 1.59, revenue ratio 1.56, rank correlation 0.53/0.54.
+10. Churn signal: ROC-AUC 0.781 for BG/NBD expected purchases, 0.491 for probability alive (equals 1 for single-purchase customers), 0.775 for the Step 4 model.
+11. High-risk AND high-value customers: 4 holding 0.2% of expected 12-month revenue; high-value customers are almost all low churn risk, so Step 8 should prioritise by value at risk (CLV x churn probability).
+12. Calibration depends on the cut-off: predicted/actual purchase days 0.98 at Jul 2011 but 1.59 at Dec 2010 (no seasonal term in the model). Use CLV mainly to rank and tier customers; revenue is not profit.

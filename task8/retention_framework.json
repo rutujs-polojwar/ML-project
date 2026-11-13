@@ -1,0 +1,136 @@
+{
+  "created_for_cutoff": "2011-07-01",
+  "settings": {
+    "P_ELEVATED": 0.35,
+    "N_PERSONAL": 50,
+    "MIN_CLV_FOR_DISCOUNT": 150
+  },
+  "risk_tier_cutoffs": {
+    "medium_from": 0.5741323269076998,
+    "high_from": 0.7123482834382167
+  },
+  "value_tier_cutoffs_clv12m": {
+    "medium_from": 612.2363241897784,
+    "high_from": 1601.4921223106105
+  },
+  "actions_ASSUMED_costs_gbp": [
+    {
+      "ActionCode": "PERSONAL",
+      "Action": "Personal outreach + tailored offer",
+      "Channel": "Account manager call",
+      "ContactCostGBP": 40.0,
+      "DiscountPct": 0.1
+    },
+    {
+      "ActionCode": "WINBACK_DISCOUNT",
+      "Action": "Win-back email with discount",
+      "Channel": "Email + discount code",
+      "ContactCostGBP": 0.5,
+      "DiscountPct": 0.1
+    },
+    {
+      "ActionCode": "REMINDER",
+      "Action": "Reorder reminder (no discount)",
+      "Channel": "Email",
+      "ContactCostGBP": 0.2,
+      "DiscountPct": 0.0
+    },
+    {
+      "ActionCode": "CHECKIN",
+      "Action": "Proactive check-in + new products",
+      "Channel": "Account manager email",
+      "ContactCostGBP": 1.0,
+      "DiscountPct": 0.0
+    },
+    {
+      "ActionCode": "LOYALTY",
+      "Action": "Loyalty reward + new products",
+      "Channel": "Reward + email",
+      "ContactCostGBP": 5.0,
+      "DiscountPct": 0.0
+    },
+    {
+      "ActionCode": "CROSSSELL",
+      "Action": "Cross-sell email",
+      "Channel": "Email",
+      "ContactCostGBP": 0.2,
+      "DiscountPct": 0.0
+    },
+    {
+      "ActionCode": "MONITOR",
+      "Action": "No action (monitor)",
+      "Channel": "-",
+      "ContactCostGBP": 0.0,
+      "DiscountPct": 0.0
+    }
+  ],
+  "rules_in_order": [
+    {
+      "Order": 1,
+      "ActionCode": "PERSONAL",
+      "Condition": "churn probability >= P_ELEVATED and within the N_PERSONAL highest value-at-risk customers",
+      "Why": "most money at risk gets the scarce personal time"
+    },
+    {
+      "Order": 2,
+      "ActionCode": "WINBACK_DISCOUNT",
+      "Condition": "High risk tier and CLV >= MIN_CLV_FOR_DISCOUNT",
+      "Why": "very likely to leave and valuable enough for a discount"
+    },
+    {
+      "Order": 3,
+      "ActionCode": "REMINDER",
+      "Condition": "High risk tier (CLV below the discount minimum)",
+      "Why": "too small for a discount: cheap reminder"
+    },
+    {
+      "Order": 4,
+      "ActionCode": "CHECKIN",
+      "Condition": "Medium risk tier with Medium/High value, or churn probability >= P_ELEVATED with High value",
+      "Why": "valuable customers with some risk: proactive contact"
+    },
+    {
+      "Order": 5,
+      "ActionCode": "REMINDER",
+      "Condition": "Medium risk tier (Low value)",
+      "Why": "cheap nudge"
+    },
+    {
+      "Order": 6,
+      "ActionCode": "LOYALTY",
+      "Condition": "High value (and low risk)",
+      "Why": "protect and grow the best customers"
+    },
+    {
+      "Order": 7,
+      "ActionCode": "CROSSSELL",
+      "Condition": "Medium value (and low risk)",
+      "Why": "grow spend with recommendations"
+    },
+    {
+      "Order": 8,
+      "ActionCode": "MONITOR",
+      "Condition": "everything else (low risk, low value)",
+      "Why": "no spend"
+    }
+  ],
+  "angle_by_driver": {
+    "Recency": "timing",
+    "RecencyGapRatio": "timing",
+    "AvgGapDays": "timing",
+    "StdGapDays": "timing",
+    "Frequency": "frequency",
+    "PurchaseRate": "frequency",
+    "Orders90": "frequency",
+    "OrdersTrend": "frequency",
+    "Monetary": "spend",
+    "Spend90": "spend",
+    "SpendTrend": "spend",
+    "AvgOrderValue": "spend",
+    "AvgItemsPerOrder": "spend",
+    "AvgLinesPerOrder": "spend",
+    "DistinctProducts": "spend",
+    "ReturnRate": "service",
+    "ReturnCount": "service"
+  }
+}
