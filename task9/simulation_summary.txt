@@ -1,0 +1,14 @@
+1. MEASURED (1 Jul 2011 test snapshot): churn model ROC-AUC 0.775, PR-AUC 0.696; contacting the top 20% by risk reaches 31% of churners (random 20%).
+2. MEASURED: CLV model predicted/actual purchase days 0.98 at the July 2011 cut-off but 1.59 at December 2010; recommender Matrix factorisation (SVD) Precision@10 0.087 vs popularity 0.049.
+3. SIMULATED base scenario (retention effect only; assumed margin 30%, assumed win-back rates, placeholder costs): framework net benefit 3,140 (5-95% range -1,876 to 9,678), 0.15 per GBP 1 spent; positive in 81% of runs.
+4. Actions that pay under the assumed win-back rates: REMINDER, CHECKIN, CROSSSELL. Below break-even: PERSONAL, WINBACK_DISCOUNT, LOYALTY.
+5. Break-even win-back rate, Personal outreach + tailored offer: 29.5% against 25.0% assumed.
+6. Break-even win-back rate, Personal outreach without a discount (what-if): 8.1% against 25.0% assumed.
+7. Break-even win-back rate, Win-back email with discount: 12.2% against 10.0% assumed.
+8. Break-even win-back rate, Loyalty reward + new products: 14.1% against 3.0% assumed.
+9. Break-even win-back rate, Reorder reminder (no discount): 0.2% against 4.0% assumed.
+10. Sensitivity: the largest effect among the core assumptions is 'Effect sizes' (net -7,756 to 14,036); with effects x0 the campaign loses 18,652. If the optional spend uplift of growth actions were real, net would be 32,355 instead of 3,140: it is a very influential assumption that is not part of the base.
+11. Targeting at N = 50 (simulated net): Win-back email with discount: value at risk -8,801, churn risk 16, CLV -8,388, random -859; Personal outreach + tailored offer: value at risk -8,419, churn risk -1,251, CLV -9,488, random -2,307; Personal outreach without a discount (what-if): value at risk 2,755, churn risk -516, CLV -169, random -914.
+12. Against alternatives (simulated net): framework 3,140; random allocation of the same actions -10,755; risk only 2,199; blanket reminder 14,121; blanket discount -74,086. The framework beats random allocation in 100% of reshuffles.
+13. What-if (hypotheses, not validated): personal call without discount 8,199; discounts replaced by reminders 7,822; all three changes 16,309; lean design (reminder to all + no-discount personal call) 17,296.
+14. ALL retention results are simulated from assumed effects; real effectiveness requires a controlled test (a randomly chosen group is contacted, another is held back).

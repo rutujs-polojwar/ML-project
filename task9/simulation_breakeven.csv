@@ -1,0 +1,9 @@
+ActionCode,ActionName,AssumedW,BreakEvenW,BreakEvenW_ifSpendUpliftOn,Verdict
+PERSONAL,Personal outreach + tailored offer,0.25,0.2946250252384869,0.2581115636306363,below break-even under the assumed rate
+WINBACK_DISCOUNT,Win-back email with discount,0.1,0.12206925891114798,0.12206925891114798,below break-even under the assumed rate
+REMINDER,Reorder reminder (no discount),0.04,0.0020952059865518096,0.0020952059865518096,pays under the assumed rate
+CHECKIN,Proactive check-in + new products,0.08,0.006494728233385465,0.0,pays under the assumed rate
+LOYALTY,Loyalty reward + new products,0.03,0.14136956278237214,0.0,below break-even under the assumed rate
+CROSSSELL,Cross-sell email,0.02,0.00298521443244533,0.0,pays under the assumed rate
+MONITOR,No action (monitor),0.0,0.0,0.0,no spend
+PERSONAL_NODISC,Personal outreach without a discount (what-if),0.25,0.08132085489774893,0.05705235901812866,would pay under the assumed rate
